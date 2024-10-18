@@ -183,9 +183,10 @@ class _RawYoutubePlayerState extends State<RawYoutubePlayer>
               },
             )
             ..addJavaScriptHandler(
-              handlerName: 'error',
+              handlerName: 'onReceivedError',
               callback: (args) {
                 print('------ sugavo klaida | error');
+                print(args);
                 controller!.updateValue(
                   controller!.value.copyWith(errorCode: int.parse(args.first)),
                 );
