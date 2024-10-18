@@ -387,33 +387,30 @@ class _YoutubePlayerState extends State<YoutubePlayer> {
               left: 0,
               right: 0,
               child: Container(
-                color: Colors.red,
+                color: Colors.black,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Container(
-                      color: Colors.black,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Material(
-                            color: Colors.transparent,
-                            child: InkWell(
-                              borderRadius: BorderRadius.circular(50.0),
-                              onTap: () => controller!.updateValue(
-                                controller!.value.copyWith(playerState: PlayerState.unknown),
-                              ),
-                              child: Image.asset(
-                                'assets/yt_logo.png',
-                                color: Colors.white,
-                                size: 60.0,
-                              ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Material(
+                          color: Colors.transparent,
+                          child: InkWell(
+                            borderRadius: BorderRadius.circular(50.0),
+                            onTap: () => controller!.updateValue(
+                              controller!.value.copyWith(playerState: PlayerState.unknown),
+                            ),
+                            child: Image.asset(
+                              'assets/yt_logo.png',
+                              color: Colors.white,
+                              size: 60.0,
                             ),
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
