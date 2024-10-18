@@ -406,6 +406,7 @@ class _YoutubePlayerState extends State<YoutubePlayer> {
                             ),
                             child: Image.asset(
                               'assets/yt_logo.png',
+                              package: 'youtube_player_flutter',
                               color: Colors.white,
                               width: 60,
                               height: 60,
