@@ -6,6 +6,9 @@
 ///
 /// Find more about it [here](https://developers.google.com/youtube/iframe_api_reference#Playback_status).
 enum PlayerState {
+  /// No conneciton
+  noConnection,
+
   /// Denotes State when player is not loaded with video.
   unknown,
 

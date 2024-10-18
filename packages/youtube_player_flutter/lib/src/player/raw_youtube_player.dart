@@ -224,6 +224,14 @@ class _RawYoutubePlayerState extends State<RawYoutubePlayer>
               },
             );
         },
+        onReceivedError: (_, __, error) {
+          if (error.description.contains('ERR_INTERNET_DISCONNECTED')) {
+            controller!.updateValue(
+              controller!.value.copyWith(playerState: PlayerState.noConnection),
+            );
+          }
+          print('----- recievino klaida ----END------');
+        },
         onLoadStop: (_, __) {
           _onLoadStopCalled = true;
           if (_isPlayerReady) {

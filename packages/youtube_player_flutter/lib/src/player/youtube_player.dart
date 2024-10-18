@@ -295,6 +295,7 @@ class _YoutubePlayerState extends State<YoutubePlayer> {
         fit: StackFit.expand,
         clipBehavior: Clip.none,
         children: [
+          if (controller.value.playerState != PlayerState.noConnection)
           RawYoutubePlayer(
             key: widget.key,
             onEnded: (YoutubeMetaData metaData) {
@@ -397,6 +398,44 @@ class _YoutubePlayerState extends State<YoutubePlayer> {
           if (!controller.flags.hideControls)
             const Center(child: PlayPauseButton()),
           if (controller.value.hasError) errorWidget,
+          if (controller.value.playerState == PlayerState.noConnection)
+            Positioned(
+              top: 0,
+              bottom: 0,
+              left: 0,
+              right: 0,
+              child: Container(color: Colors.red,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(color: Colors.red,
+                      child:Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Material(
+                            color: Colors.transparent,
+                            child: InkWell(
+                              borderRadius: BorderRadius.circular(50.0),
+                              onTap: () =>
+                                  controller!.updateValue(
+                                    controller!.value.copyWith(playerState: PlayerState.unknown),
+                                  ),
+                              child: Image.asset(
+                                'assets/yt_logo.webp',
+                                color: Colors.white,
+                                size: 60.0,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
         ],
       ),
     );
