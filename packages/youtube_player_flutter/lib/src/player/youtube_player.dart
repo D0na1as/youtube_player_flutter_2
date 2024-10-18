@@ -5,6 +5,7 @@
 import 'package:flutter/material.dart';
 
 import '../enums/thumbnail_quality.dart';
+import '../enums/player_state.dart';
 import '../utils/errors.dart';
 import '../utils/youtube_meta_data.dart';
 import '../utils/youtube_player_controller.dart';
@@ -406,7 +407,8 @@ class _YoutubePlayerState extends State<YoutubePlayer> {
                             child: Image.asset(
                               'assets/yt_logo.png',
                               color: Colors.white,
-                              size: 60.0,
+                              width: 60,
+                              height: 60,
                             ),
                           ),
                         ),
