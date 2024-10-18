@@ -406,7 +406,7 @@ class _YoutubePlayerState extends State<YoutubePlayer> {
                                 controller!.value.copyWith(playerState: PlayerState.unknown),
                               ),
                               child: Image.asset(
-                                'assets/yt_logo.webp',
+                                'assets/yt_logo.png',
                                 color: Colors.white,
                                 size: 60.0,
                               ),
