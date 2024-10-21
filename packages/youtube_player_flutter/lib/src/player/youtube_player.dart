@@ -389,7 +389,6 @@ class _YoutubePlayerState extends State<YoutubePlayer> {
               left: 0,
               right: 0,
               child: SizedBox(
-                color: Colors.transparent,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
