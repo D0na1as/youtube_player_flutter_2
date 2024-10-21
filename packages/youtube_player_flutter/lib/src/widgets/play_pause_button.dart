@@ -107,6 +107,7 @@ class _PlayPauseButtonState extends State<PlayPauseButton>
       );
     }
     if (_controller.value.hasError) return const SizedBox();
+    if (value.playerState != PlayerState.noConnection)
     return widget.bufferIndicator ??
         const SizedBox.square(
           dimension: 70,
@@ -114,6 +115,7 @@ class _PlayPauseButtonState extends State<PlayPauseButton>
             valueColor: AlwaysStoppedAnimation(Colors.white),
           ),
         );
+    return const SizedBox();
   }
 
   void _togglePlayPause(PlayerState state) {

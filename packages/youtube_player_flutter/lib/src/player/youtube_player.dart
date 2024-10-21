@@ -382,12 +382,13 @@ class _YoutubePlayerState extends State<YoutubePlayer> {
           if (!controller.flags.hideControls) const Center(child: PlayPauseButton()),
           if (controller.value.hasError) errorWidget,
           if (controller.value.playerState == PlayerState.noConnection)
+          if (controller.value.playerState == PlayerState.noConnection)
             Positioned(
               top: 0,
               bottom: 0,
               left: 0,
               right: 0,
-              child: Container(
+              child: SizedBox(
                 color: Colors.transparent,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
